@@ -1,449 +1,66 @@
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KDK Softwares Email Signature Generator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #31719b 0%, #fc7d72 100%);
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #31719b, #fc7d72);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 30px;
-        }
-
-        .form-section {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-        }
-
-        .form-section h2 {
-            color: #31719b;
-            margin-bottom: 20px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e9ecef;
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: 'Quicksand', sans-serif;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #31719b;
-        }
-
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-upload input[type="file"] {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .file-upload-label {
-            display: block;
-            padding: 12px;
-            background: #31719b;
-            color: white !important;
-            border-radius: 6px;
-            text-align: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            font-weight: 500;
-        }
-
-        .file-upload-label:hover {
-            background: #2a5f8a;
-        }
-
-        .preview-section {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-        }
-
-        .preview-section h2 {
-            color: #31719b;
-            margin-bottom: 20px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .signature-preview {
-            background: white;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #dee2e6;
-            margin-bottom: 20px;
-        }
-
-        .copy-button {
-            background: #fc7d72;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            width: 100%;
-            transition: background 0.3s ease;
-            font-family: 'Quicksand', sans-serif;
-        }
-
-        .copy-button:hover {
-            background: #e96b5f;
-        }
-
-        .copy-success {
-            color: #28a745;
-            font-size: 12px;
-            text-align: center;
-            margin-top: 8px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .copy-success.show {
-            opacity: 1;
-        }
-
-        .instructions {
-            background: #e8f4f8;
-            border: 1px solid #31719b;
-            border-radius: 6px;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 13px;
-            color: #2a5f8a;
-        }
-
-        .instructions h3 {
-            margin: 0 0 10px 0;
-            color: #31719b;
-        }
-
-        .instructions ol {
-            margin: 10px 0 0 0;
-            padding-left: 20px;
-        }
-
-        .instructions li {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 20px;
-            }
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+        <table cellpadding="0" cellspacing="0" style="font-family:Libertinus Sans,sans-serif;font-size:14px;color:#333;line-height:1.4;max-width:520px">
+            <tbody>
+                <tr>
+                    <td style="vertical-align:top;padding-right:16px;width:170px">
+                        <img src="https://staknet.github.io/portfolio/w-n.png" width="105" height="105" style="border-radius:6px;object-fit:cover;padding-left:10px"><br>
+                        <div style="margin-top:15px;font-size:20px;">
+                            
+                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
+                    <i class="fab fa-linkedin" style="color:#31719b"></i>
+                </a>
             
-            .header {
-                padding: 20px;
-            }
+                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
+                    <i class="fab fa-facebook" style="color:#31719b"></i>
+                </a>
             
-            .header h1 {
-                font-size: 24px;
-            }
-        }
-
-        .required {
-            color: #dc3545;
-        }
-
-        .image-preview {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .image-preview img {
-            max-width: 105px;
-            max-height: 105px;
-            border-radius: 6px;
-            border: 2px solid #e9ecef;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>KDK Softwares Email Signature Generator</h1>
-            <p>Create your professional email signature in seconds</p>
-        </div>
-
-        <div class="main-content">
-            <div class="form-section">
-                <h2>Your Information</h2>
-                
-                <div class="form-group">
-                    <label for="profileImage">Profile Image <span class="required">*</span></label>
-                    <div class="file-upload">
-                        <input type="file" id="profileImage" accept="image/*" onchange="handleImageUpload(event)">
-                        <label for="profileImage" class="file-upload-label">Choose Profile Image</label>
-                    </div>
-                    <div class="image-preview" id="imagePreview">
-                        <img src="https://www.kdksoftware.com/assets/img/client-avatar-kdk.jpg" alt="Default Profile" id="previewImg">
-                        <p style="font-size: 12px; color: #666; margin-top: 5px;">Default image will be used if none uploaded</p>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input type="text" id="fullName" placeholder="e.g., John Doe" oninput="updatePreview()">
-                </div>
-
-                <div class="form-group">
-                    <label for="designation">Role/Designation <span class="required">*</span></label>
-                    <input type="text" id="designation" placeholder="e.g., Specialist" oninput="updatePreview()">
-                </div>
-
-                <div class="form-group">
-                    <label for="department">Department <span class="required">*</span></label>
-                    <input type="text" id="department" placeholder="e.g., Marketing" oninput="updatePreview()">
-                </div>
-
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phoneNumber" placeholder="e.g., +91 9874563210" oninput="updatePreview()">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" placeholder="e.g., yourname@kdksoftware.com" oninput="updatePreview()">
-                </div>
-            </div>
-
-            <div class="preview-section">
-                <h2>Preview</h2>
-                <div class="signature-preview" id="signaturePreview">
-                    <!-- Signature will be generated here -->
-                </div>
-                
-                <button class="copy-button" onclick="copySignature()">Copy Email Signature HTML</button>
-                <div class="copy-success" id="copySuccess">✓ Signature HTML copied to clipboard!</div>
-
-                <div class="instructions">
-                    <h3>How to Add This Signature in Zoho Mail:</h3>
-                    <ol>
-                        <li>Login to <a href="https://mail.zoho.com" target="_blank">Zoho Mail</a></li>
-                        <li>Click the <strong>Gear icon</strong> (⚙) in the top-right corner</li>
-                        <li>Go to <strong>Mail Settings</strong> → <strong>Signatures</strong></li>
-                        <li>Click <strong>+ Add</strong> to create a new signature</li>
-                        <li>Select <strong>Rich Text Editor</strong> mode</li>
-                        <li>Click the <strong>&lt;/&gt;</strong> icon (HTML source)</li>
-                        <li>Paste your HTML email signature code</li>
-                        <li>Click <strong>Save</strong> and assign the signature to the desired “From” address</li>
-                        <li>Send a test email to verify formatting</li>
-                    </ol>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let currentImageSrc = 'https://www.kdksoftware.com/assets/img/client-avatar-kdk.jpg';
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    currentImageSrc = e.target.result;
-                    document.getElementById('previewImg').src = currentImageSrc;
-                    updatePreview();
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function updatePreview() {
-            const fullName = document.getElementById('fullName').value || '[Your Name]';
-            const designation = document.getElementById('designation').value || '[Your Designation]';
-            const department = document.getElementById('department').value || '[Your Department]';
-            const phoneNumber = document.getElementById('phoneNumber').value || '[Your Contact No.]';
-            const email = document.getElementById('email').value || '[Your Official Email Address]';
-
-            const signatureHTML = generateSignatureHTML(fullName, designation, department, phoneNumber, email, currentImageSrc);
-            document.getElementById('signaturePreview').innerHTML = signatureHTML;
-        }
-
-        function generateSignatureHTML(name, designation, department, phone, email, imageSrc) {
-            return `
-                <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-                <table cellpadding="0" cellspacing="0" style="font-family:Quicksand,sans-serif;font-size:14px;color:#333;line-height:1.4;max-width:520px">
-                    <tbody>
-                        <tr>
-                            <td style="vertical-align:top;padding-right:16px;min-width:170px;max-width:170px;">
-                                <img src="${imageSrc}" width="105" height="105" style="border-radius:6px;object-fit:cover;padding-left:10px"><br>
-                                <div style="margin-top:15px">
-                                    <a href="https://www.linkedin.com/company/kdksoftwareindia/" style="margin-right:6px;text-decoration:none">
-                                        <img src="https://www.kdksoftware.com/mailer/assets/social_icons_in_brand_colors/linkedin.png" width="20px" height="20px">
-                                    </a>
-                                    <a href="https://facebook.com/KDKSoftwares" style="margin-right:6px;text-decoration:none">
-                                        <img src="https://www.kdksoftware.com/mailer/assets/social_icons_in_brand_colors/fb.png" width="20px" height="20px">
-                                    </a>
-                                    <a href="https://www.instagram.com/kdksoftware/" style="margin-right:6px;text-decoration:none">
-                                        <img src="https://www.kdksoftware.com/mailer/assets/social_icons_in_brand_colors/insta.png" width="20px" height="20px">
-                                    </a>
-                                    <a href="https://www.youtube.com/@KDKSoftwares" style="margin-right:6px;text-decoration:none">
-                                        <img src="https://www.kdksoftware.com/mailer/assets/social_icons_in_brand_colors/yt.png" width="20px" height="20px">
-                                    </a>
-                                    <a href="http://x.com/KDKSoftwares" style="text-decoration:none">
-                                        <img src="https://www.kdksoftware.com/mailer/assets/social_icons_in_brand_colors/x.png" width="20px" height="20px">
-                                    </a>
-                                </div>
-                            </td>
-                            <td style="vertical-align:top;padding-top:2px">
-                                <div style="font-size:16px;font-weight:600;color:#31719b">${name}</div>
-                                <div style="color:#fc7d72;font-weight:500">${designation}</div>
-                                <div style="margin-bottom:10px">${department} | KDK Softwares</div>
-                                <div style="border-top:1px solid #fc7d72;margin:10px 0"></div>
-                                <table cellpadding="0" cellspacing="0" style="font-size:14px">
-                                    <tbody>
-                                        <tr>
-                                            <td style="padding-right:6px">☎ </td>
-                                            <td><a href="tel:${phone.replace(/\s+/g, '')}" style="color:#31719b;text-decoration:none">${phone}</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding-right:6px">✉ </td>
-                                            <td><a href="mailto:${email}" style="color:#31719b;text-decoration:none">${email}</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding-right:6px">➤ </td>
-                                            <td><a href="https://www.kdksoftware.com" style="color:#31719b;text-decoration:none">www.kdksoftware.com</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="padding-top:16px">
-                                <div style="font-size:11px;color:#777;line-height:1.5">
-                                    <strong>KDK Softwares Disclaimer:</strong> This message is for the sole use of the intended recipient(s) and may contain confidential, proprietary or legally privileged information. Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the original intended recipient of the message, please contact the sender by reply email and destroy all copies of the original message.
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            `;
-        }
-
-        function copySignature() {
-            const fullName = document.getElementById('fullName').value || '[name to be provided]';
-            const designation = document.getElementById('designation').value || '[role/designation to be provided]';
-            const department = document.getElementById('department').value || '[department to be provided]';
-            const phoneNumber = document.getElementById('phoneNumber').value || '[to be provided with +91 and 10 digits]';
-            const email = document.getElementById('email').value || '[to be provided suffixed with @kdksoftware.com]';
-
-            const signatureHTML = generateSignatureHTML(fullName, designation, department, phoneNumber, email, currentImageSrc);
+                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
+                    <i class="fab fa-instagram" style="color:#31719b"></i>
+                </a>
             
-            // Create a temporary textarea to copy the HTML
-            const tempTextarea = document.createElement('textarea');
-            tempTextarea.value = signatureHTML;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
+                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
+                    <i class="fab fa-youtube" style="color:#31719b"></i>
+                </a>
             
-            try {
-                document.execCommand('copy');
-                showCopySuccess();
-            } catch (err) {
-                // Fallback for modern browsers
-                navigator.clipboard.writeText(signatureHTML).then(() => {
-                    showCopySuccess();
-                }).catch(() => {
-                    alert('Please manually select and copy the signature HTML from the preview.');
-                });
-            }
+                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
+                    <i class="fab fa-x-twitter" style="color:#31719b"></i>
+                </a>
             
-            document.body.removeChild(tempTextarea);
-        }
-        
-        function showCopySuccess() {
-            const successMsg = document.getElementById('copySuccess');
-            successMsg.classList.add('show');
-            setTimeout(() => {
-                successMsg.classList.remove('show');
-            }, 3000);
-        }
-
-        // Initialize preview on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            updatePreview();
-        });
-    </script>
-</html>
+                        </div>
+                    </td>
+                    <td style="vertical-align:top;padding-top:2px">
+                        <div style="font-size:16px;font-weight:600;color:#31719b">shlainia</div>
+                        <div style="color:#fc7d72;font-weight:500">sfjsdlkf</div>
+                        <div style="margin-bottom:10px">sdfasdgdsa | sgsdfgds </div>
+                        <div style="border-top:1px solid #fc7d72;margin:10px 0"></div>
+                        <table cellpadding="0" cellspacing="0" style="font-size:14px">
+                            <tbody>
+                                
+            <tr>
+                <td style="padding-right:6px">📞</td>
+                <td><a href="tel:09870979798" style="color:#31719b;text-decoration:none">09870979798</a></td>
+            </tr>
+            <tr>
+                <td style="padding-right:6px">✉️</td>
+                <td><a href="mailto:shalini@gmail.com" style="color:#31719b;text-decoration:none">shalini@gmail.com</a></td>
+            </tr>
+                                
+            <tr>
+                <td style="padding-right:6px">🔗</td>
+                <td><a href="https://in.linkedin.com/" style="color:#31719b;text-decoration:none">https://in.linkedin.com/</a></td>
+            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-top:16px">
+                        <div style="font-size:11px;color:#777;line-height:1.5">
+                            <strong>sgsdfgds  Disclaimer:</strong> This message is for the sole use of the intended recipient(s) and may contain confidential, proprietary or legally privileged information. Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the original intended recipient of the message, please contact the sender by reply email and destroy all copies of the original message.
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
