@@ -1,66 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-        <table cellpadding="0" cellspacing="0" style="font-family:Libertinus Sans,sans-serif;font-size:14px;color:#333;line-height:1.4;max-width:520px">
-            <tbody>
-                <tr>
-                    <td style="vertical-align:top;padding-right:16px;width:170px">
-                        <img src="https://staknet.github.io/portfolio/w-n.png" width="105" height="105" style="border-radius:6px;object-fit:cover;padding-left:10px"><br>
-                        <div style="margin-top:15px;font-size:20px;">
-                            
-                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
-                    <i class="fab fa-linkedin" style="color:#31719b"></i>
-                </a>
-            
-                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
-                    <i class="fab fa-facebook" style="color:#31719b"></i>
-                </a>
-            
-                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
-                    <i class="fab fa-instagram" style="color:#31719b"></i>
-                </a>
-            
-                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
-                    <i class="fab fa-youtube" style="color:#31719b"></i>
-                </a>
-            
-                <a href="https://in.linkedin.com/" style="margin-right:6px;text-decoration:none;color:inherit;">
-                    <i class="fab fa-x-twitter" style="color:#31719b"></i>
-                </a>
-            
-                        </div>
-                    </td>
-                    <td style="vertical-align:top;padding-top:2px">
-                        <div style="font-size:16px;font-weight:600;color:#31719b">shlainia</div>
-                        <div style="color:#fc7d72;font-weight:500">sfjsdlkf</div>
-                        <div style="margin-bottom:10px">sdfasdgdsa | sgsdfgds </div>
-                        <div style="border-top:1px solid #fc7d72;margin:10px 0"></div>
-                        <table cellpadding="0" cellspacing="0" style="font-size:14px">
-                            <tbody>
-                                
-            <tr>
-                <td style="padding-right:6px">📞</td>
-                <td><a href="tel:09870979798" style="color:#31719b;text-decoration:none">09870979798</a></td>
-            </tr>
-            <tr>
-                <td style="padding-right:6px">✉️</td>
-                <td><a href="mailto:shalini@gmail.com" style="color:#31719b;text-decoration:none">shalini@gmail.com</a></td>
-            </tr>
-                                
-            <tr>
-                <td style="padding-right:6px">🔗</td>
-                <td><a href="https://in.linkedin.com/" style="color:#31719b;text-decoration:none">https://in.linkedin.com/</a></td>
-            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="padding-top:16px">
-                        <div style="font-size:11px;color:#777;line-height:1.5">
-                            <strong>sgsdfgds  Disclaimer:</strong> This message is for the sole use of the intended recipient(s) and may contain confidential, proprietary or legally privileged information. Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the original intended recipient of the message, please contact the sender by reply email and destroy all copies of the original message.
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="email-signature.min.js"></script>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Libertinus Sans', sans-serif;
+            background: linear-gradient(135deg, #ccc 0%, #0153be 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ccc 0%, #0153be 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+            align-items: start;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .form-section h2 {
+            color: #0153be;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Libertinus Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #0153be;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 12px;
+            background: #0153be;
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+
+        .file-upload-label:hover {
+            background: #e96b5f !important;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 30px;
+            align-self: start;
+            height: fit-content;
+
+        }
+
+        .preview-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .preview-section h2 {
+            color: #0153be;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .signature-preview {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+
+        .copy-button {
+            background: #0153be;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            width: 100%;
+            transition: background 0.3s ease;
+            font-family: 'Libertinus Sans', sans-serif;
+        }
+
+        .copy-button:hover {
+            background: #e96b5f;
+        }
+
+        .copy-success {
+            color: #28a745;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .copy-success.show {
+            opacity: 1;
+        }
+
+        .instructions {
+            background: #e8f4f8;
+
+            border: 1px solid;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #2a5f8a;
+        }
+
+        .instructions h3 {
+            margin: 0 0 10px 0;
+
+        }
+
+        .instructions ol {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .image-preview img {
+            max-width: 105px;
+            max-height: 105px;
+            border-radius: 6px;
+            border: 2px solid #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-wrapper {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Email Signature Generator</h1>
+            <p>Create your professional email signature in seconds</p>
+        </div>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2>Your Information</h2>
+
+                <div class="form-group">
+                    <label for="profileImage">Profile Image <span class="required">*</span></label>
+                    <div class="file-upload">
+                        <input type="file" id="profileImage" accept="image/*" onchange="handleImageUpload(event)">
+                        <label for="profileImage" class="file-upload-label">Choose Profile Image</label>
+                    </div>
+                    <div class="image-preview" id="imagePreview">
+                        <img src="https://staknet.github.io/portfolio/w-n.png" alt="Default Profile" id="previewImg">
+                        <p style="font-size: 12px; color: #666; margin-top: 5px;">Default image will be used if none
+                            uploaded</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" placeholder="e.g., Shalini Taknet" oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="designation">Role/Designation <span class="required">*</span></label>
+                    <input type="text" id="designation" placeholder="e.g., Marketer" oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department <span class="required">*</span></label>
+                    <input type="text" id="department" placeholder="e.g., Marketing" oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="companyName">Company Name <span class="required">*</span></label>
+                    <input type="text" id="companyName" placeholder="e.g., Taknetion Media" oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phoneNumber" placeholder="e.g., +91 9988776655" oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="e.g., yourname@website.com" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label for="website">Website <span class="required">*</span></label>
+                    <input type="url" id="website" placeholder="e.g., www.website.com" oninput="updatePreview()">
+                </div>
+                <h3 style="margin: 25px 0 15px 0; font-size: 18px; font-weight: 600;">Social
+                    Media Links
+                </h3>
+
+                <div class="form-group">
+                    <label for="linkedinUrl">LinkedIn URL</label>
+                    <input type="text" id="linkedinUrl" placeholder="e.g., https://linkedin.com/in/yourname"
+                        oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="facebookUrl">Facebook URL</label>
+                    <input type="text" id="facebookUrl" placeholder="e.g., https://facebook.com/yourname"
+                        oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="instagramUrl">Instagram URL</label>
+                    <input type="text" id="instagramUrl" placeholder="e.g., https://instagram.com/yourname"
+                        oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="youtubeUrl">YouTube URL</label>
+                    <input type="text" id="youtubeUrl" placeholder="e.g., https://youtube.com/@yourname"
+                        oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="twitterUrl">X (Twitter) URL</label>
+                    <input type="text" id="twitterUrl" placeholder="e.g., https://x.com/yourname"
+                        oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label for="primaryColor">Primary Color</label>
+                    <input type="color" id="primaryColor" value="#31719b" oninput="updatePreview()">
+                </div>
+
+                <div class="form-group">
+                    <label for="secondaryColor">Secondary Color</label>
+                    <input type="color" id="secondaryColor" value="#fc7d72" oninput="updatePreview()">
+                </div>
+
+            </div>
+            <div class="sticky-wrapper">
+                <div class="preview-section">
+                    <h2>Preview</h2>
+                    <div class="signature-preview" id="signaturePreview">
+                        <!-- Signature will be generated here -->
+                    </div>
+
+                    <button class="copy-button" onclick="copySignature()">Copy Email Signature HTML</button>
+                    <div class="copy-success" id="copySuccess">✓ Signature HTML copied to clipboard!</div>
+
+                    <div class="instructions">
+                        <h3>How to Add This Signature:</h3>
+                        <ol>
+                            <li><strong>Gmail:</strong> Settings → General → Signature → Create New → Paste HTML</li>
+                            <li><strong>Zoho Mail:</strong> Settings → Mail → Signature → Rich Text Editor → HTML Source
+                            </li>
+                            <li><strong>Outlook:</strong> File → Options → Mail → Signatures → New → Paste HTML</li>
+                            <li>Make sure to test the signature before using it</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="text-align:center;font-size:12px;color:#777; padding: 5px;">
+            © 2025 Shalini Taknet | All Rights Reserved. Code is protected and monitored.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
